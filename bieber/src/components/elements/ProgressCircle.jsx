@@ -40,10 +40,10 @@ const ProgressCircle = ({ skill: { title, percentage } }) => {
           />
         </motion.svg>
         <span className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 transform text-center text-xl text-body">
-          {percentage}%
+          {"90%"}
         </span>
       </div>
-      <h5>{title}</h5>
+      <h5>{"Back-end Development"}</h5>
     </div>
   );
 };

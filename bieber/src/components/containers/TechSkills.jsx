@@ -7,10 +7,11 @@ import { ProgressCircle } from "../elements";
 const TechSkills = () => {
   const { data } = useQuery("tech-skills", getTechskills);
 
-  if (!data) return null;
+  
 
   return (
     <div className="grid grid-cols-4 gap-7">
+      {console.log("hello")}
       {data?.map((skill, index) => (
         <motion.div
           initial="hidden"
