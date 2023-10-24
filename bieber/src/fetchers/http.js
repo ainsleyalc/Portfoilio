@@ -10,4 +10,7 @@ const http = axios.create({
     },
 });
 
+    console.log("helloasas")
+
+
 export { http };

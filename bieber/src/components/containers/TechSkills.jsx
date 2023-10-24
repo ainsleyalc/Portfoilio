@@ -3,16 +3,29 @@ import { useQuery } from "react-query";
 import { getTechskills } from "../../fetchers";
 import { childrenAnimation } from "../../lib/motion";
 import { ProgressCircle } from "../elements";
+import axios from 'axios';
+import { useState, useEffect } from "react";
 
 const TechSkills = () => {
   const { data } = useQuery("tech-skills", getTechskills);
+  const [techSkills, setTechSkills] = useState([]);
 
-  
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/techskills')
+      .then((response) => {
+        setTechSkills(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
 
   return (
+  
     <div className="grid grid-cols-4 gap-7">
-      {console.log("hello")}
-      {data?.map((skill, index) => (
+      {techSkills?.map((skill, index) => (
+        
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -24,9 +37,11 @@ const TechSkills = () => {
         >
           <ProgressCircle skill={skill} />
         </motion.div>
+       
       ))}
+       {console.log(techSkills)}
     </div>
-  );
+  );  
 };
 
 export default TechSkills;

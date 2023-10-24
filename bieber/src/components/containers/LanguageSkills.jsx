@@ -3,15 +3,27 @@ import { useQuery } from "react-query";
 import { getLanguageskills } from "../../fetchers";
 import { childrenAnimation } from "../../lib/motion";
 import { ProgressBar } from "../elements";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const LanguageSkills = () => {
   const { data } = useQuery("language-skills", getLanguageskills);
+  const [langSkills, setLangSkills] = useState([]);
 
-  if (!data) return null;
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/languages')
+      .then((response) => {
+        setLangSkills(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+  
 
   return (
     <div className="grid grid-cols-2 gap-7">
-      {data?.map((skill, index) => (
+      {langSkills?.map((skill, index) => (
         <motion.div
           initial="hidden"
           whileInView="visible"
