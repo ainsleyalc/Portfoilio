@@ -31,6 +31,7 @@ class Services(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column (db.String)
     icon = db.Column (db.String)
+    text = db.Column(db.String)
 
 
 

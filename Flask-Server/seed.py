@@ -31,7 +31,17 @@ def create_sample_data():
         python = LanguageSkills(title="Python", percentage=90)
         flask = LanguageSkills(title="Flask", percentage=99)
         sql = LanguageSkills(title="SQL", percentage=98)
-     
+
+
+
+        xiUi = Services(title="Ui/Ux Design",text="I possess the expertise to adeptly craft web page front-end designs that are characterized by interactivity and user-friendliness. My proficiency extends to the realm of user experience design, ensuring that the digital interfaces I create are not only visually engaging but also tailored to offer a seamless and intuitive user experience.",icon = "/icons/quill-pen-line.svg")
+        WEBdEV = Services(title="Web Development",text="My skillset encompasses proficiency in both front-end and back-end web applications. I possess the capability to adeptly diagnose and resolve issues, as well as enhance web applications through the integration of immersive and efficient code, with the ultimate aim of enhancing user experiences and simplifying operational processes.",icon="/icons/code-s-slash-line.svg")
+        Databases = Services(title="Database",text="My expertise extends to the realm of databases and RESTful APIs, enabling me to proficiently manage data and develop robust application interfaces that adhere to industry standards. This knowledge empowers me to seamlessly bridge the gap between data management and user interaction, facilitating a more streamlined and efficient digital ecosystem.",icon="/icons/code-s-slash-line.svg")
+
+
+        db.session.add(xiUi)
+        db.session.add(WEBdEV)
+        db.session.add(Databases)
         db.session.add(backend)
         db.session.add(frontend)
         db.session.add(UIux)

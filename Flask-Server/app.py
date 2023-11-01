@@ -52,5 +52,18 @@ class Languages(Resource):
         return make_response(jsonify(languages), 201)
 
 api.add_resource(Languages, "/languages")
+
+
+
+
+
+class Service(Resource):
+    def get(self):
+        services = []
+        for service in Services.query.all():
+            services.append(service.to_dict())
+        return make_response(jsonify(services), 200)
+
+api.add_resource(Service, "/services")
 if __name__ == "__main__":
     app.run(debug=True)
