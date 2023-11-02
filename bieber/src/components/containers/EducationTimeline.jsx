@@ -1,14 +1,26 @@
 import { motion } from "framer-motion";
 import { RiBookLine } from "react-icons/ri";
 import { useQuery } from "react-query";
-import { getEducationBackground } from "../../fetchers";
+
 import { childrenAnimation } from "../../lib/motion";
 import { TimelineItem } from "../elements";
 
 const EducationTimeline = () => {
-    const { data } = useQuery("education-background", getEducationBackground);
+ 
+    const data = [
+        {
+         "title":"High School Diploma",
+         "meta":"Royal Palm Beach High School",
+         "year":"2021"
+        },
+        {
+            "title":"Coding BootCamp",
+            "meta":"Flatiron School",
+            "year":"03/2023 - 09/2023",
+            "text":"I have undergone an intensive six-month Flatiron bootcamp, where I received comprehensive education in both frontend and backend web development. This experience not only equipped me with a deep understanding of these domains but also instilled in me the importance of effective teamwork and collaboration within a professional environment."
+        }
+    ]
 
-    if (!data) return null;
 
     return (
         <div className="education-timeline">

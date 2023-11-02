@@ -6,9 +6,18 @@ import { childrenAnimation } from "../../lib/motion";
 import { TimelineItem } from "../elements";
 
 const JobTimeline = () => {
-    const { data } = useQuery("job-experience", getJobExperience);
 
-    if (!data) return null;
+
+    const data = [
+        {
+            "id": 1,
+            "title": "Xfinity Technician",
+            "meta": "Xfinity/Comcast",
+            "text": "My prior role as a technician at Xfinity involved daily responsibilities centered around troubleshooting and diagnosing issues within residential settings. This experience significantly contributed to the refinement of my teamwork and communication skills. Furthermore, it has served to enhance my leadership abilities, augmenting my proficiency in problem-solving and customer service.",
+            "year": "2021 - 2023"
+        },
+    ]
+
 
     return (
         <div className="job-experience">

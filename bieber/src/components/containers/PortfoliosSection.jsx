@@ -6,12 +6,42 @@ import { Portfolio } from "../elements";
 import { PortfolioFilters } from "../utils";
 
 const PortfoliosSection = () => {
+
+  const data = [
+    {
+        "id": 1,
+        "title": "Car Rental Template",
+        "subtitle": "I have created a front-page template for a car rental website, showcasing my proficiency in HTML, CSS, and React. This template serves as a testament to my ability to design visually appealing and user-friendly websites, encapsulating the essence of a seamless and engaging online experience for potential car rental customers",
+        "coverimage": "/images/portfolios/ss2.png",
+        "imagegallery": [
+            "/images/portfolios/ss2.png",
+            "/images/portfolios/ss1.png",
+            "/images/portfolios/portfolio-image-lg-17.jpg"
+        ],
+        "videogallery": true,
+        "url": "https://carrental-1jor.onrender.com/",
+        "filters": ["react"]
+    },
+    {
+      "id": 1,
+      "title": "Event-Hoster",
+      "subtitle": "I have designed and developed a user-friendly and interactive website that facilitates the planning, attendance, and hosting of events by multiple users. This project prominently showcases my expertise in React, CSS, and HTML for the front-end, while concurrently featuring a robust back-end that exemplifies my proficiency in SQL, Python, database management, and the implementation of RESTful APIs. The website seamlessly incorporates full CRUD (Create, Read, Update, Delete) functionality, emphasizing my comprehensive skill set in both front-end and back-end web development.",
+      "coverimage": "/images/portfolios/ss4.png",
+      "imagegallery": [
+          "/images/portfolios/ss4.png",
+
+      ],
+      "videogallery": true,
+      "url": "https://carrental-1jor.onrender.com/",
+      "filters": ["react"]
+  }
+  ]
   // States
   const [visiblePortfolios, setVisiblePortfolios] = useState([]);
   const [currentFilter, setCurrentFilter] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
 
-  const { data } = useQuery("portfolios", getPortfolios);
+
 
   useEffect(() => {
     if (data) setVisiblePortfolios(data.slice(0, 6));
@@ -48,7 +78,7 @@ const PortfoliosSection = () => {
     }
   }, [currentFilter, data, pageNumber]);
 
-  if (!data) return null;
+  
 
   return (
     <>

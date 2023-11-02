@@ -5,11 +5,43 @@ import { useQuery } from "react-query";
 import { getInformation } from "../../fetchers";
 import { childrenAnimation } from "../../lib/motion";
 import ContactForm from "./ContactForm";
+import { SocialIcons } from "../elements";
 
 const ContactSection = () => {
-  const { data } = useQuery("information", getInformation);
+ const data = {
+  "firstName": "Ainsley",
+  "lastName": "Alceme",
+  "fullName": "Ainsley Alceme",
+  "thumbImage": "/images/formal-image.png",
+  "largeImage": "/images/about-image.jpg",
+  "bio": "I am a frontend web developer. I can provide clean code and pixel perfect design. I also make website more & more interactive with web animations.",
+  "age": 220,
+  "nationality": "Haitian-American",
+  "languages": [
+      "English",
+      "Creole"
+  ],
+ 
+  "freelance": "Available",
+  "socialAddress": {
+      "facebook": "https://facebook.com",
+      "twitter": "https://twitter.com",
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com",
+      "dribbble": "https://dribbble.com"
+  },
+  "phoneNumbers": [
+      "561-358-5753",
+      "561-358-5753"
+     
+  ],
+  "emailAddress": [
+      "AinsleyAlcSe@gmail.com",
+    
+  ]
+}
 
-  if (!data) return null;
+ 
 
   return (
     <div className="grid grid-cols-9 gap-7">
@@ -24,8 +56,7 @@ const ContactSection = () => {
         <div className="contact-information">
           <h4>Contact Information</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A omnis,
-            iusto harum possimus non praesentium qui facere.
+          Feel free to contact me for anything
           </p>
           <span className="inline-block h-1 w-20 rounded-full bg-primary bg-opacity-20"></span>
           <div className="contact-blocks mt-5 space-y-5">
@@ -64,10 +95,10 @@ const ContactSection = () => {
                 <RiMapPinLine />
               </span>
               <div className="content">
-                <h5 className="mb-2">Contact address</h5>
-                <p className="mb-0">
-                  121 King Street, Melbourne, United States
-                </p>
+                <h5 className="mb-2">Links</h5>
+                
+                  <SocialIcons  />
+              
               </div>
             </div>
           </div>
@@ -81,7 +112,7 @@ const ContactSection = () => {
         variants={childrenAnimation}
         className="col-span-9 lg:col-span-5"
       >
-        <ContactForm />
+
       </motion.div>
     </div>
   );

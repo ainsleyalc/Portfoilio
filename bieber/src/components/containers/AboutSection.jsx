@@ -6,7 +6,7 @@ import { getInformation } from "../../fetchers";
 import { useQuery } from "react-query";
 
 const AboutSection = () => {
-  const { data } = useQuery("information", getInformation);
+ 
 
  
 

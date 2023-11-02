@@ -7,24 +7,36 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 
 const TechSkills = () => {
-  const { data } = useQuery("tech-skills", getTechskills);
-  const [techSkills, setTechSkills] = useState([]);
 
-  useEffect(() => {
-    axios.get('http://127.0.0.1:5000/techskills')
-      .then((response) => {
-        setTechSkills(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
 
+
+      const data = [
+        {
+        "id": 1,
+        "percentage": 90,
+        "title": "Back-End Development"
+        },
+        {
+        "id": 2,
+        "percentage": 95,
+        "title": "Frontend Development"
+        },
+        {
+        "id": 3,
+        "percentage": 89,
+        "title": "UI/UX Design"
+        },
+        {
+        "id": 4,
+        "percentage": 60,
+        "title": "Mobile App Development"
+        }
+  ]
 
   return (
   
     <div className="grid grid-cols-4 gap-7">
-      {techSkills?.map((skill, index) => (
+      {data?.map((skill, index) => (
         
         <motion.div
           initial="hidden"
@@ -39,7 +51,7 @@ const TechSkills = () => {
         </motion.div>
        
       ))}
-       {console.log(techSkills)}
+       
     </div>
   );  
 };
