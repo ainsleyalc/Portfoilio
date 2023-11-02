@@ -5,12 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Blog, Breadcrumb } from "../../components/elements";
 import { createSlug } from "../../lib";
-import {
-  getAllCategories,
-  getPagesPath,
-  getPostsByPage,
-  getRecentPosts,
-} from "../../lib/blogging";
+
 import { childrenAnimation } from "../../lib/motion";
 import { Layout } from "../../components/layout";
 
